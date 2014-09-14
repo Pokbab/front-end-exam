@@ -1,0 +1,61 @@
+@import 'http://bradfrost.github.com/this-is-responsive/styles.css';
+.list li {
+  background: url("http://bradfrost.github.com/this-is-responsive/patterns/images/icon_arrow_right.png") no-repeat 97% 50%;
+  border-bottom: 1px solid #ccc;
+  display: table;
+  border-collapse: collapse;
+  width: 100%;
+}
+.inner {
+  display: table-row;
+  overflow: hidden;
+}
+.li-img {
+  display: table-cell;
+  vertical-align: middle;
+  width: 30%;
+  padding-right: 1em;
+}
+.li-img img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.li-text {
+  display: table-cell;
+  vertical-align: middle;
+  width: 70%;
+}
+.li-head {
+  margin: 0;
+}
+.li-sub {
+  margin: 0;
+}
+
+/*
+[예제풀이]
+1. 해상도가 640px 미만일 때 1컬럼
+2. 해상도가 640px 이상, 1024px 미만일 때 2컬럼
+3. 해상도가 1024px 이상일 때 3컬럼
+*/
+@media all and (max-width:640px) {
+  .list li{
+    float:left;
+    width:100%;
+  }
+}
+
+@media all and (min-width:640px) and (max-width:1024px){
+  .list li{
+    float:left;
+    width:50%;
+  }
+}
+
+@media all and (min-width:1024px) {
+  .list li{
+    float:left;
+    width:33.3%;
+  }
+}

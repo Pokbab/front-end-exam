@@ -1,0 +1,88 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+.header, .left, .middle, .right, .footer {
+	padding: 5px;
+	box-sizing: border-box;
+	color: #fff
+}
+
+.header {
+	min-height: 80px;
+	background: #FF9480;
+}
+
+.footer {
+	min-height: 80px;
+	background: #E85349;
+}
+
+.container {
+	position: relative;
+	margin: 10px 0;
+}
+
+.container:after {
+	display: block;
+	clear: both;
+	content: '';
+}
+
+.left {
+	min-height: 100px;
+	background: #FFEFA3
+}
+
+.middle {
+	min-height: 600px;
+	background: #00A178;
+}
+
+.right {
+	min-height: 100px;
+	background: #2C656B;
+}
+
+/*
+[예제풀이]
+1. 해상도가 640px 미만일 때 1 column으로 변경
+2. 해상도가 640px 이상, 1024px 미만일 때 2 column으로 변경
+3. 해상도가 1024px 이상일 때 3 column으로 변경
+*/
+@media only screen and (max-width:640px) {
+	.left, .middle {
+		margin-bottom: 10px
+	}
+}
+
+@media only screen and (min-width:640px) and (max-width:1024px) {
+	.left {
+		float: left;
+		width: 30%;
+		margin-right: 10px;
+	}
+	.middle {
+		overflow: hidden;
+	}
+	.right {
+		margin-top: 10px
+	}
+}
+
+@media only screen and (min-width:1024px) {
+	.left {
+		float: left;
+		width: 15%;
+		margin-right: 10px;
+	}
+	.middle {
+		float: left;
+		width: 65%;
+		margin-right: 10px;
+	}
+	.right {
+		overflow: hidden;
+	}
+}
